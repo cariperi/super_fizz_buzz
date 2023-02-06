@@ -2,23 +2,35 @@
 # For each one, print the output according to the rules of Super Fizz Buzz
 
 def super_fizz_buzz(number)
-  if number % 3 == 0 && number % 5 == 0 && number % 7 == 0
+  if divisible_by_3?(number) && divisible_by_5?(number) && divisible_by_7?(number)
     'SuperFizzBuzz'
-  elsif number % 3 == 0 && number % 7 == 0
+  elsif divisible_by_3?(number) && divisible_by_7?(number)
     'SuperFizz'
-  elsif number % 5 == 0 && number % 7 == 0
+  elsif divisible_by_5?(number) && divisible_by_7?(number)
     'SuperBuzz'
-  elsif number % 3 == 0 && number % 5 == 0
+  elsif divisible_by_3?(number) && divisible_by_5?(number)
     'FizzBuzz'
-  elsif number % 3 == 0
+  elsif divisible_by_3?(number)
     'Fizz'
-  elsif number % 5 == 0
+  elsif divisible_by_5?(number)
     'Buzz'
-  elsif number % 7 == 0
+  elsif divisible_by_7?(number)
     'Super'
   else
     number
   end
+end
+
+def divisible_by_3?(number)
+  number % 3 == 0
+end
+
+def divisible_by_5?(number)
+  number % 5 == 0
+end
+
+def divisible_by_7?(number)
+  number % 7 == 0
 end
 
 (1..1000).each {|number| puts super_fizz_buzz(number)}
