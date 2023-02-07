@@ -28,9 +28,7 @@ class SuperFizzBuzz
   end
 
   def output_range(number_1, number_2)
-    results = []
-    (number_1..number_2).each { |number| results << calculate(number) }
-    results
+    (number_1..number_2).map { |number| calculate(number) }
   end
 
   def divisible_by_3?(number)
